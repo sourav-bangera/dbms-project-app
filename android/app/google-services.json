@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "368161759412",
+    "project_id": "dbmsapp-29349",
+    "storage_bucket": "dbmsapp-29349.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368161759412:android:a8caab8a466c844f3bb7e1",
+        "android_client_info": {
+          "package_name": "com.example.dbmspr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRvErPPwRX-b-ZdFo5wRXysMf3gaA7dHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
