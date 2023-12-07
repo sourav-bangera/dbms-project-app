@@ -155,8 +155,7 @@ class _QuestionPageState extends State<QuestionPage> {
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: NextButton(
-            ),
+            child: NextButton(index: index,questionLength: extractedData.length),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat ,

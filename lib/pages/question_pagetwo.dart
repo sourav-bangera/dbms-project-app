@@ -140,8 +140,7 @@ class _QuestionPageTwoState extends State<QuestionPageTwo> {
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: NextButton(
-            ),
+            child: NextButton(index: index,questionLength: extractedData.length),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat ,

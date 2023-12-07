@@ -138,8 +138,7 @@ var db = DBconnect();
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: NextButton(
-            ),
+            child: NextButton(index: index,questionLength: extractedData.length),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat ,
