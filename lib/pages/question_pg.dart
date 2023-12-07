@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:dbmspr/constants.dart';
 import 'package:dbmspr/models/question_model.dart';
 import 'package:dbmspr/widgets(tut)/next_button.dart';
@@ -143,7 +144,15 @@ class _QuestionPageState extends State<QuestionPage> {
           ],)
         ),
         floatingActionButton: GestureDetector(
-          onTap: () => nextQuestion(extractedData.length),
+          onTap: () { 
+            if(index==extractedData.length-1){
+              AudioPlayer().play(AssetSource('audio/thank_you.mp3'));
+            }
+            else{
+            AudioPlayer().play(AssetSource('audio/button_click.mp3'));
+            }
+            nextQuestion(extractedData.length);
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: NextButton(
