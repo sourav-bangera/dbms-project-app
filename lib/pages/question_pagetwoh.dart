@@ -24,9 +24,28 @@ class _QuestionPageTwohState extends State<QuestionPageTwoh> {
  late Future _questions;
 
 
- Future<List<Question>> getData()async{
-   return db.fetchQuestionhardtwo();
- }
+Future<List<Question>> getData() async {
+  List<Question> questions = await db.fetchQuestionhardtwo();
+  return shuffleQuestions(questions);
+}
+
+List<Question> shuffleQuestions(List<Question> questions) {
+  List<Question> shuffledList = List.from(questions);
+
+  for (Question question in shuffledList) {
+    List<String> options = question.options.keys.toList();
+    options.shuffle();
+
+    Map<String, bool> shuffledOptions = {};
+    for (String option in options) {
+      shuffledOptions[option] = question.options[option]!;
+    }
+
+    question.options = shuffledOptions;
+  }
+
+  return shuffledList;
+}
 
   @override
   void initState() {

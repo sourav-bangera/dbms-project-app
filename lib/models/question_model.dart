@@ -1,7 +1,7 @@
 class Question{
- final String id;
- final String title;
- final Map<String, bool> options;
+  String id;
+  String title;
+  Map<String, bool> options;
 
 
  Question({

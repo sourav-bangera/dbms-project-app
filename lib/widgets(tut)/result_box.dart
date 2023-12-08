@@ -1,4 +1,5 @@
 import 'package:dbmspr/constants.dart';
+import 'package:dbmspr/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class ResultBox extends StatelessWidget {
@@ -18,7 +19,7 @@ class ResultBox extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('Result',
+          const Text('Submit',
           style: TextStyle(color: neutral, fontSize: 22.0,fontFamily: 'Helvetica'),
           ),
           const SizedBox(height: 20.0),
@@ -30,8 +31,10 @@ class ResultBox extends StatelessWidget {
           Text(result == questionLength/2?'Almost there':result < questionLength/2 ? 'Try Again' : 'Great',style: 
           const TextStyle(color: neutral,fontFamily: 'Helvetica',fontSize: 20),),
           const SizedBox(height: 55.0,),
-          GestureDetector(onTap: onPressed,
-          child: const Text('Start Over',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255),
+          GestureDetector(onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder:(context) => const HomePage()));
+          },
+          child: const Text('Exit',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255),
           fontFamily: 'Helvetica',
           fontSize: 20,
           letterSpacing: 1.0),)
