@@ -25,7 +25,7 @@ class _QuestionPageTwohState extends State<QuestionPageTwoh> {
 
 
  Future<List<Question>> getData()async{
-   return db.fetchQuestiontwo();
+   return db.fetchQuestionhardtwo();
  }
 
   @override

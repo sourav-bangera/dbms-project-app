@@ -24,7 +24,7 @@ class _QuestionPagehState extends State<QuestionPageh> {
 
 
  Future<List<Question>> getData()async{
-   return db.fetchQuestion();
+   return db.fetchQuestionhard();
  }
 
   @override

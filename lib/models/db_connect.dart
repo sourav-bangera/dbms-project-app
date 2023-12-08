@@ -8,6 +8,9 @@ class DBconnect {
 final url = Uri.parse('https://dbmsapp-29349-default-rtdb.asia-southeast1.firebasedatabase.app/questions.json');
 final urltwo = Uri.parse('https://dbmsapp-29349-default-rtdb.asia-southeast1.firebasedatabase.app/questions2.json');
 final urlthree = Uri.parse('https://dbmsapp-29349-default-rtdb.asia-southeast1.firebasedatabase.app/questions3.json');
+final urlfour = Uri.parse('https://dbmsapp-29349-default-rtdb.asia-southeast1.firebasedatabase.app/questionshard.json');
+final urlfive = Uri.parse('https://dbmsapp-29349-default-rtdb.asia-southeast1.firebasedatabase.app/questionshard2.json');
+
 
 Future<void> addQuestion(Question question) async {
   http.post(url, body: json.encode({
@@ -99,6 +102,81 @@ Future<List<Question>> fetchQuestionthree() async {
 
   });
 }
+
+
+Future<void> addQuestionhard(Question question) async {
+  http.post(urlfour, body: json.encode({
+    'title': question.title,
+    'options': question.options,
+  }));
+}
+
+
+Future<List<Question>> fetchQuestionhard() async {
+  
+  return http.get(urlfour).then((response){
+
+  var datafour = json.decode(response.body) as Map<String, dynamic>;
+  List<Question> newQuestionshard = [];
+  datafour.forEach((key,value){
+
+    var newQuestionhard = Question(
+    id: key,
+    title: value['title'],
+    options: Map.castFrom(value['options']),
+    );
+
+    newQuestionshard.add(newQuestionhard);
+  });
+  print(newQuestionshard);
+  return newQuestionshard;
+
+
+  });
+}
+
+Future<void> addQuestionhardtwo(Question question) async {
+  http.post(urlfive, body: json.encode({
+    'title': question.title,
+    'options': question.options,
+  }));
+}
+
+
+Future<List<Question>> fetchQuestionhardtwo() async {
+  
+  return http.get(urlfive).then((response){
+
+  var datafive = json.decode(response.body) as Map<String, dynamic>;
+  List<Question> newQuestionshardtwo = [];
+  datafive.forEach((key,value){
+
+    var newQuestionhardtwo = Question(
+    id: key,
+    title: value['title'],
+    options: Map.castFrom(value['options']),
+    );
+
+    newQuestionshardtwo.add(newQuestionhardtwo);
+  });
+  print(newQuestionshardtwo);
+  return newQuestionshardtwo;
+
+
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

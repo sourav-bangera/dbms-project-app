@@ -13,14 +13,23 @@ import 'package:dbmspr/models/db_connect.dart';
 
 void main() async {
   var db = DBconnect();
-  // db.addQuestionthree(
-  //   Question(id: '60', title: 'Self feeding organisms are called',
-  //   options: {
-  //   'Heterotrophs':false,
-  //   'Bacteria and fungi':false,
-  //   'Autotrophs':true,
-  //   'Fungi':false})
-  // );
+// db.addQuestionhardtwo(
+//     Question(id: '70', title: 'What is the Drake Equation used for in the field of astrophysics?',
+//     options: {
+//         'Calculating the probability of intelligent extraterrestrial life':true,
+//         'Predicting the trajectory of comets':false,
+//         'Estimating the age of galaxies':false,
+//         'Determining the mass of black holes':false})
+// );
+
+
+
+
+
+
+
+
+
     // db.fetchQuestionthree();
 
 
